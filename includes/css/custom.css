@@ -1,0 +1,158 @@
+/*
+ * A partial implementation of the Ruby list functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/lists.rb
+ */
+/*
+ * A partial implementation of the Ruby constants functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/constants.rb
+ */
+/*
+ * A partial implementation of the Ruby display functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/core/lib/compass/core/sass_extensions/functions/display.rb
+ */
+/* default color for everything */
+/* breakpoints */
+/* max width of site column */
+/* 
+ *	some default float/display/width properties we use often.
+ *	
+ *	usage:
+ *		h3{
+ *			@include floatblock();
+ *		}
+ */
+/* 
+ *	Set all font properties. Do a global find/replace within the 
+ *	sass/templates/header folders on the $family options below to update.
+ *	
+ *	usage:
+ *		h3{
+ *			@include font('Open Sans',16,$white,0);
+ *		}
+ */
+/* 
+ *	Set font-size independant of the font mixin
+ *	
+ *	usage:
+ *		p{
+ *			@include font-size(16,0);
+ *		}
+ */
+/* 
+ *	Add a fontawesome icon ($type controls this) as a pseudoelement
+ *	before or after the element it's called upon.
+ *	
+ *	usage:
+ *		.button{
+ *			@include arrow('before',$white-tl,14,'\f105');
+ *		}
+ */
+/* 
+ *	Add a fontawesome icon ($type controls this) as a pseudoelement
+ *	centered and facing down.
+ *	
+ *	usage:
+ *		.button{
+ *			@include arrowdown($white-tl,14,'\f105');
+ *		}
+ */
+/*
+ *	Mixin to standardize focus styles. Add this rather than 
+ *	styling each individually
+ *	
+ *	usage:
+ *		a{
+ *			@include focus_styles();
+ *		}
+ */
+/*
+ *	Using the calc function with fallback support
+ *	usage:
+ *		li{
+ *			@include calc('width','100% - 75px','170px');
+ *		}
+ */
+/* 
+ *	Adds placeholder styles for input fields.
+ *	
+ *	usage:
+ *		input{
+ *			@include placeholder{
+ *				color:#ccc;
+ *				text-shadow:0 0 5px $black-t;
+ *			}
+ *		}
+ */
+/* 
+ *	Sets width of items based on sibling count. Used
+ *	primarily for navigation menus. The low and high
+ *	values can be adjusted to reduce the amount of css
+ *	generated. If you're not worried about this, keep the defaults.
+ *	Need to add the parent, as the amp; doesn't take the direct parent
+ *	but returns the full stack.
+ *	
+ *	usage (expecting between 4 and 7 total items):
+ *		li{
+ *			@include sibling_count_prop('li',4,7);
+ *		}
+ */
+/* Mixin */
+/* linear gradient  & helpers */
+/*  */
+h1 {
+  color: #4687c3;
+  font-size: 36px;
+  font-size: 3.6rem;
+  line-height: 42px;
+  line-height: 4.2rem;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 700; }
+
+h2 {
+  color: #bbbbbb;
+  font-size: 28px;
+  font-size: 2.8rem;
+  line-height: 34px;
+  line-height: 3.4rem;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 700; }
+
+h3 {
+  color: #2a2a2a;
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 30px;
+  line-height: 3rem;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 700;
+  line-height: 24px; }
+
+h4 {
+  color: #2a2a2a;
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 26px;
+  line-height: 2.6rem;
+  font-family: 'Lobster', cursive; }
+
+h5 {
+  color: #2a2a2a;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 24px;
+  line-height: 2.4rem;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 600; }
+
+h6 {
+  color: #2a2a2a;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 24px;
+  line-height: 2.4rem;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 600; }
+
+/*  */
+body * {
+  box-sizing: border-box; }

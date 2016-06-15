@@ -1,0 +1,59 @@
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "../bower_components/compass-mixins/lib/compass";
+@import "variables/**/*";
+@import "base/**/*";
+
+
+/*  */
+
+h1{
+	@include font('open_sans_bold',36,$color-3);
+}
+h2{
+	@include font('open_sans_bold',28,$color-2);
+}
+h3{
+	@include font('open_sans_bold',24,$color-1);
+	line-height:24px;
+}
+h4{
+	@include font('lobster',20,$color-1);
+}
+h5{
+	@include font('open_sans_reg',18,$color-1);
+}
+h6{
+	@include font('open_sans_reg',18,$color-1);
+}
+
+p{}
+ul{
+	li{}
+}
+a{
+	&.btn{}
+	&.readmore{}
+}
+blockquote{}
+table{
+	thead{
+		tr{
+			td{}
+		}
+	}
+	tbody{
+		tr{
+			td{}
+		}
+	}
+}
+img{}
+
+/*  */
+
+body{
+	*{
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+}
