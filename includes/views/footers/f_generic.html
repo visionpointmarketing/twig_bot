@@ -1,1 +1,6 @@
-<footer>{{ title }}</footer>
+<footer>
+{{ include('@components/list.tmpl',{
+	array:footermenu.val,
+	class:footermenu.class
+})}}
+</footer>

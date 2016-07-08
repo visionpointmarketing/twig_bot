@@ -1,0 +1,11 @@
+<ul {% if class is defined %} class='{{ class }}' {% endif %}>
+	{% if array is defined %}
+		{% for item in array %}
+			<li>{{ item|raw }}</li>
+		{% endfor %}
+	{% else %}
+		{% for i in 0..3 %}
+			<li>List Item</li>
+		{% endfor %}
+	{% endif %}
+</ul>

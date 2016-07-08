@@ -1,1 +1,7 @@
-<header>{{ title }}</header>
+
+<header>
+{{ include('@components/list.tmpl',{
+	array:navigation.val,
+	class:navigation.class
+})}}
+</header>
