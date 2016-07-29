@@ -10,6 +10,7 @@
 <!-- <h1>{{ h1|default('default h1') }}</h1> -->
 <!-- {% set hval0,title0 = 3,'this is a header tag' %} -->
 
+
 {% for key,item in content %}
 	{% if item is iterable %}
 
@@ -20,14 +21,8 @@
 			{% set var = var|merge([ temp ]) %}
 		{% endfor %}
 
-		{% set var = var|join(',') %}
-		<div>{{ var }}</div>
-
-		{{ include ("@components/" ~ key ~ ".tmpl" ) }}
+		{% include ("@components/" ~ key ~ ".tmpl") with item %}
 	{% else %}
-		{{ include ("@components/" ~ item ~ ".tmpl") }}
+		{% include ("@components/" ~ item ~ ".tmpl") %}
 	{% endif %}
 {% endfor %}
-{#
-{ hval:'1',title:'sample title' }
-#}

@@ -6,5 +6,8 @@ $loader = new Twig_Loader_Filesystem('includes/views/');
 	$loader-> addPath('includes/views/footers/','footers');
 	$loader-> addPath('includes/views/components/','components');
 	$loader-> addPath('includes/internals/','internals');
-$twig = new Twig_Environment($loader);
+$twig = new Twig_Environment($loader,array(
+'debug' => true,
+));
+$twig->addExtension(new Twig_Extension_Debug());
 ?>

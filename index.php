@@ -28,20 +28,20 @@ $footer = 'f_generic';
 		);
 		/*render content*/
 		echo $twig->render('@templates/'.$template.'.html',
-			array(
-				'content'=> array(
-					'header'=>array(
+			[
+				'content'=> [
+					'header'=>[
 						'hval'=>'1',
-						'title'=>'sample title'
-					),
+						'title'=>'sample'
+					],
 					'list',
-					'button'=>array(
-						'btn-class'=>'dark'
-					),
+					'button'=>[
+						'btnclass'=>'dark'
+					],
 					'button',
 					'list'
-				)
-			)
+				]
+			]
 		);
 		/*render footer*/
 		echo $twig->render('@footers/'.$footer.'.html',
