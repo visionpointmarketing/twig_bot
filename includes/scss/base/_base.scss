@@ -1,0 +1,51 @@
+/*  */
+
+h1{
+	@include font('open_sans_bold',36,$color-3);
+	margin:0;
+}
+h2{
+	@include font('open_sans_bold',28,$color-2);
+	margin:0;
+}
+h3{
+	@include font('open_sans_bold',24,$color-1);
+	margin:0;
+}
+h4{
+	@include font('open_sans',20,$color-1);
+	margin:0;
+}
+h5{
+	@include font('open_sans_reg',18,$color-1);
+	margin:0;
+}
+h6{
+	@include font('open_sans_reg',18,$color-1);
+	margin:0;
+}
+
+p{}
+ul{
+	li{}
+}
+a{
+	&.btn{}
+	&.readmore{}
+}
+blockquote{}
+table{
+	thead{
+		tr{
+			td{}
+		}
+	}
+	tbody{
+		tr{
+			td{}
+		}
+	}
+}
+img{}
+
+/*  */

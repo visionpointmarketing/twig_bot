@@ -1,7 +1,10 @@
-
 <header>
-{{ include('@components/list.tmpl',{
-	array:navigation.val,
-	class:navigation.class
-})}}
+	<div class='container'>
+		<div class='row'>
+			{{ include('@components/list.tmpl',{
+				array:navigation.val,
+				class:navigation.class
+			})}}
+		</div>
+	</div>
 </header>

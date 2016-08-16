@@ -1,0 +1,12 @@
+<?php
+function main_nav(){
+	$arr = array(
+		'<a href="#">About Us</a>',
+		'<a href="#">Admissions</a>',
+		'<a href="#">Academics</a>',
+		'<a href="#">Student Life</a>',
+		'<a href="#">News & Events</a>'
+	);
+	return $arr;
+}
+?>

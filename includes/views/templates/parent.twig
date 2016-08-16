@@ -1,0 +1,70 @@
+<div class='container'>
+	<div class='row'>
+		<div class='col-xs-12'>
+			{% block page_title %}
+				<h1>Parent Page</h1>
+			{% endblock page_title %}
+		</div>
+	</div>
+	<div class='row'>
+		{% block nav_sidebar %}
+			{% block subnav %}
+				<ul>
+					<li><a href='#'>Subnav</a></li>
+				</ul>
+			{% endblock subnav %}
+			{% for key,item in nav_sidebar %}
+				{% if item is iterable %}
+					{% set var = [] %}
+					{% for k,v in item %}
+						{% set temp %}
+							{% if loop.first %} { {% endif %}
+								{{ k }}:'{{ v }}'
+							{% if loop.last %} } {% endif %}
+						{% endset %}
+						{% set var = var|merge([ temp ]) %}
+					{% endfor %}
+					{% include ("@components/" ~ key ~ ".tmpl") with item %}
+				{% else %}
+					{% include ("@components/" ~ item ~ ".tmpl") %}
+				{% endif %}
+			{% endfor %}
+		{% endblock nav_sidebar %}
+		{% block content %}
+			{% for key,item in content %}
+				{% if item is iterable %}
+					{% set var = [] %}
+					{% for k,v in item %}
+						{% set temp %}
+							{% if loop.first %} { {% endif %}
+								{{ k }}:'{{ v }}'
+							{% if loop.last %} } {% endif %}
+						{% endset %}
+						{% set var = var|merge([ temp ]) %}
+					{% endfor %}
+					{% include ("@components/" ~ key ~ ".tmpl") with item %}
+				{% else %}
+					{% include ("@components/" ~ item ~ ".tmpl") %}
+				{% endif %}
+			{% endfor %}
+		{% endblock content %}
+		{% block promo_sidebar %}
+			{% for key,item in promo_sidebar %}
+				{% if item is iterable %}
+					{% set var = [] %}
+					{% for k,v in item %}
+						{% set temp %}
+							{% if loop.first %} { {% endif %}
+								{{ k }}:'{{ v }}'
+							{% if loop.last %} } {% endif %}
+						{% endset %}
+						{% set var = var|merge([ temp ]) %}
+					{% endfor %}
+					{% include ("@components/" ~ key ~ ".tmpl") with item %}
+				{% else %}
+					{% include ("@components/" ~ item ~ ".tmpl") %}
+				{% endif %}
+			{% endfor %}
+		{% endblock promo_sidebar %}
+	</div>
+</div>
