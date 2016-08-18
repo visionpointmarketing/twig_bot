@@ -1,5 +1,6 @@
+{# extends the parent twig file #}
 {% extends "@templates/parent.twig" %}
-{# don't add html in an extended template! #}
+{# don't add html in an extended template outside of the block definitions! #}
 
 {% block page_title %}
 	<h1>Default Page</h1>
@@ -12,9 +13,13 @@
 {% endblock nav_sidebar %}
 
 {% block content %}
-	<div class='col-xs-9' id='main-content'>
+	<div class='col-xs-6' id='main-content'>
 		{{ parent() }}
 	</div>
 {% endblock content %}
 
-{% block promo_sidebar %}{% endblock promo_sidebar %}
+{% block promo_sidebar %}
+	<div class='col-xs-3 promo-sidebar'>
+		{{ parent() }}
+	</div>
+{% endblock promo_sidebar %}

@@ -1,0 +1,8 @@
+{# this is called if the getcomponent.twig template can't find the required component #}
+<div class='error' style="color:red;">
+	{% if item is iterable %}
+		The '{{ key }}' component does not exist 
+	{% else %}
+		The '{{ item }}' component does not exist 
+	{% endif %}
+</div>

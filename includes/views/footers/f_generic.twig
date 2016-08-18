@@ -1,10 +1,11 @@
 		<footer>
 			<div class='container'>
 				<div class='row'>
-					{{ include('@components/list.tmpl',{
+					{{ include('@components/list.twig',{
 						array:footermenu.val,
 						class:footermenu.class
-					})}}
+						})
+					}}
 				</div>
 			</div>
 		</footer>
