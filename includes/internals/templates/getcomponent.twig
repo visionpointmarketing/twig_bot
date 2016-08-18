@@ -1,0 +1,24 @@
+{# if we pass an array #}
+{% if item is iterable %}
+	{% if key == 'markup' %}
+		{{ item.val|raw }}
+	{% else %}
+		{% set var = [] %}
+		{# iterate through the array of parameters #}
+		{% for k,v in item %}
+			{# to build a string to pass through #}
+			{% set temp %}
+				{% if loop.first %} { {% endif %}
+					{{ k }}:'{{ v }}'
+				{% if loop.last %} } {% endif %}
+			{% endset %}
+			{# merge the parameters into the var array #}
+			{% set var = var|merge([ temp ]) %}
+		{% endfor %}
+		{# load the template (or the warning if it doesn't exist) and pass the parameters through item #}
+		{% include (["@components/" ~ key ~ ".twig","@internals/templates/noexist.twig"]) ignore missing with item %}
+	{% endif %}
+{% else %}
+	{# if we don't have an array of parameters, everything is default #}
+	{% include (["@components/" ~ item ~ ".twig","@internals/templates/noexist.twig"]) ignore missing %}
+{% endif %}

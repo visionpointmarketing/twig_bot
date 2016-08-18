@@ -1,0 +1,4 @@
+{# function to insert an input field #}
+{% macro input(name, value, type, size, label) %}
+	<label>{{ label }}<input type="{{ type|default('text') }}" name="{{ name }}" value="{{ value|e }}" size="{{ size|default(20) }}" /></label>
+{% endmacro %}
